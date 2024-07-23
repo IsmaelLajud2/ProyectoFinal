@@ -1,5 +1,6 @@
 const Articulos = require('../model/articulosModel')
 
+//servicio para obtener todos los articulos
 const getAllArticulosServices = async () => {
     try {
         const articulo = await Articulos.find({})
@@ -9,6 +10,7 @@ const getAllArticulosServices = async () => {
     }
 
 }
+//servicio para obtener los articulos por su ID unico
 
 const getArticuloByIdService = async (id) => {
     try {
@@ -20,6 +22,7 @@ const getArticuloByIdService = async (id) => {
         throw new Error({ message: error.message })
     }
 }
+//servicio para crear articulos
 
 const createArticulosService = async (newArticulo) => {
     try {
@@ -47,6 +50,7 @@ const createArticulosService = async (newArticulo) => {
         throw new Error({ message: error.message })
     }
 }
+//servicio para editar los articulos por su ID unico
 
 const editArticulosService = async (id, payload, queryOptions) => {
     try {
@@ -55,6 +59,7 @@ const editArticulosService = async (id, payload, queryOptions) => {
         throw new Error({ message: error.message })
     }
 }
+//servicio para borrar los articulos por su ID unico
 
 const deleteArticuloService = async (id) => {
     try {
